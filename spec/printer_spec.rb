@@ -6,4 +6,10 @@ RSpec.describe Printer do
   it 'has #print method' do
     expect(described_class.new(incoming_array)).to respond_to(:print)
   end
+
+  describe '#print' do
+    it 'prints to stdout' do
+      expect {described_class.new(incoming_array).print}.to output(/./).to_stdout
+    end
+  end
 end
