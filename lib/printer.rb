@@ -3,6 +3,9 @@ class Printer
     @array = array
   end
 
-  def print
+  def print(prefix = '')
+    @array.each do |route, number|
+      puts "#{route} - #{number} #{prefix} visits"
+    end
   end
 end
